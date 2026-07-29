@@ -1,4 +1,0 @@
-﻿  main.cpp
-c:\users\user\source\repos\arrays\arrays\main.cpp(5): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
-c:\users\user\source\repos\arrays\arrays\main.cpp(11): warning C4101: arr: неиспользованная локальная переменная
-  Arrays.vcxproj -> C:\Users\User\source\repos\Arrays\Debug\Arrays.exe

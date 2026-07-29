@@ -1,3 +1,0 @@
-﻿  main.cpp
-c:\users\user\source\repos\functions\functiontemplates\main.cpp(58): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
-  FunctionTemplates.vcxproj -> C:\Users\User\source\repos\Functions\Debug\FunctionTemplates.exe

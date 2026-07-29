@@ -1,4 +1,0 @@
-﻿  main.cpp
-c:\users\user\source\repos\arrays\unique\main.cpp(15): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
-c:\users\user\source\repos\arrays\unique\main.cpp(20): warning C4101: num: неиспользованная локальная переменная
-  Unique.vcxproj -> C:\Users\User\source\repos\Arrays\Debug\Unique.exe

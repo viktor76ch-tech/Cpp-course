@@ -1,4 +1,0 @@
-﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(538,5): warning MSB8028: промежуточный каталог (Debug\) содержит файлы, которые используются совместно с другим проектом (DZ_1.vcxproj).  Это может привести к ошибкам очистки и перестроения.
-  main.cpp
-C:\Users\Виктор\source\repos\с++\Arrays\DZ_1\main.cpp(31,6): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
-  DZ_1.vcxproj -> C:\Users\Виктор\source\repos\с++\Arrays\Debug\Arrays_DZ.exe

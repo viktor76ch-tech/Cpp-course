@@ -1,7 +1,0 @@
-C:\Users\User\source\repos\IntroductionToDOTNET\IntroductionToDOTNET\bin\Debug\IntroductionToDOTNET.exe.config
-C:\Users\User\source\repos\IntroductionToDOTNET\IntroductionToDOTNET\bin\Debug\IntroductionToDOTNET.exe
-C:\Users\User\source\repos\IntroductionToDOTNET\IntroductionToDOTNET\bin\Debug\IntroductionToDOTNET.pdb
-C:\Users\User\source\repos\IntroductionToDOTNET\IntroductionToDOTNET\obj\Debug\IntroductionToDOTNET.csprojAssemblyReference.cache
-C:\Users\User\source\repos\IntroductionToDOTNET\IntroductionToDOTNET\obj\Debug\IntroductionToDOTNET.csproj.CoreCompileInputs.cache
-C:\Users\User\source\repos\IntroductionToDOTNET\IntroductionToDOTNET\obj\Debug\IntroductionToDOTNET.exe
-C:\Users\User\source\repos\IntroductionToDOTNET\IntroductionToDOTNET\obj\Debug\IntroductionToDOTNET.pdb

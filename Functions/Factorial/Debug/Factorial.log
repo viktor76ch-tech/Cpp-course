@@ -1,3 +1,0 @@
-﻿  main.cpp
-c:\users\user\source\repos\functions\factorial\main.cpp(6): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
-  Factorial.vcxproj -> C:\Users\User\source\repos\Functions\Debug\Factorial.exe

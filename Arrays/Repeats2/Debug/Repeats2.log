@@ -1,3 +1,0 @@
-﻿  main.cpp
-C:\Users\Виктор\source\repos\с++\Arrays\Repeats2\main.cpp(4,6): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
-  Repeats2.vcxproj -> C:\Users\Виктор\source\repos\с++\Arrays\Debug\Repeats2.exe

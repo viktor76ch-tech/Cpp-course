@@ -1,6 +1,0 @@
-﻿  main.cpp
-c:\users\user\source\repos\functions\arrays_dz\main.cpp(53): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
-c:\users\user\source\repos\functions\arrays_dz\main.cpp(131): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-c:\users\user\source\repos\functions\arrays_dz\main.cpp(206): warning C4244: return: преобразование "float" в "int", возможна потеря данных
-c:\users\user\source\repos\functions\arrays_dz\main.cpp(215): warning C4244: return: преобразование "double" в "int", возможна потеря данных
-  Arrays_DZ.vcxproj -> C:\Users\User\source\repos\Functions\Debug\Arrays_DZ.exe

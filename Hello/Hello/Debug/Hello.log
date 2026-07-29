@@ -1,3 +1,0 @@
-﻿  main.cpp
-C:\Users\Виктор\source\repos\с++\Hello\Hello\main.cpp(4,6): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
-  Hello.vcxproj -> C:\Users\Виктор\source\repos\с++\Hello\Debug\Hello.exe

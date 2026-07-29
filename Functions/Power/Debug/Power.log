@@ -1,3 +1,0 @@
-﻿  main.cpp
-c:\users\user\source\repos\functions\power\main.cpp(8): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
-  Power.vcxproj -> C:\Users\User\source\repos\Functions\Debug\Power.exe
