@@ -1,0 +1,4 @@
+﻿  main.cpp
+C:\Users\Виктор\source\repos\с++\Arrays\Repeats\main.cpp(16,6): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+C:\Users\Виктор\source\repos\с++\Arrays\Repeats\main.cpp(56,6): warning C4101: num: неиспользованная локальная переменная
+  Repeats.vcxproj -> C:\Users\Виктор\source\repos\с++\Arrays\Debug\Repeats.exe

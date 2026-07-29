@@ -1,0 +1,4 @@
+﻿  main.cpp
+C:\Users\Виктор\source\repos\с++\Arrays\Unique_2\main.cpp(6,6): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+C:\Users\Виктор\source\repos\с++\Arrays\Unique_2\main.cpp(12,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Unique_2.vcxproj -> C:\Users\Виктор\source\repos\с++\Arrays\Debug\Unique_2.exe
