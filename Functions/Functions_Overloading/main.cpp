@@ -1,334 +1,360 @@
-﻿#include<iostream>
+﻿/*
+В проекте 'Functions\Arrays' написать следующие функции:
+??? Sum(???);			//Возвращает сумму элементов массива;					DONE
+??? Avg(???);			//Возвращает среднее-арифметическое элементов массива;	DONE
+??? MinValueIn(???);	//Возвращает минимальное значение в массиве;			DONE
+??? MaxValueIn(???);	//Возвращает максимальное значение в массиве;			DONE
+??? ShiftLeft(???);		//Циклически сдвигает массив на заданное количество элементов влево;	DONE
+??? ShiftRight(???);	//Циклически сдвигает массив на заданное количество элементов вправо;	DONE
+
+2. Сделать commit, после чего перегрузить все вышеперечисленные функции для типов:
+float, double и char;
+*/
+
+#include<iostream>
 using namespace std;
-using std::cout;
-using std::cin;
-using std::endl;
+void RandomArr(int a[], const int n);
+void RandomArr(float a[], const int n);
+void RandomArr(double a[], const int n);
+void RandomArr(char a[], const int n);
 
+void ShowArr(int a[], const int n);
+void ShowArr(float a[], const int n);
+void ShowArr(double a[], const int n);
+void ShowArr(char a[], const int n);
 
-#define delimiter "\n----------------------------------------\n"
+int Sum(int a[], const int n);
+int Sum(float a[], const int n);
+int Sum(double a[], const int n);
 
-const int ROWS = 3;
-const int COLS = 4;
+double Avg(int a[], const int n);
+float Avg(float a[], const int n);
+double Avg(double a[], const int n);
 
-void FillRand(int arr[], const int n);	//Заполняет массив случайными числами
-void FillRand(double arr[], const int n);	//Заполняет массив случайными числами
-void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS, int minRand = 0, int maxRand = 100);
+int MinValueIn(int a[], const int n);
+float MinValueIn(float a[], const int n);
+double MinValueIn(double a[], const int n);
 
-//template - создает шаблон
-//typename - создает шаблонный тип
-//T - имя шаблонного типа
-template<typename T>
-void Print(T arr[], const int n);
-template<typename T>
-void Print(T arr[ROWS][COLS], const int ROWS, const int COLS);
+int MaxValueIn(int a[], const int n);
+float MaxValueIn(float a[], const int n);
+double MaxValueIn(double a[], const int n);
 
-template<typename T>
-void Sort(T arr[], const int n);
-template<typename T>
-void Sort(T arr[ROWS][COLS], const int ROWS, const int COLS);
+void ShiftRight(int a[], const int n, int s);
+void ShiftRight(float a[], const int n, int s);
+void ShiftRight(double a[], const int n, int s);
+void ShiftRight(char a[], const int n, int s);
 
-template<typename T>
-T Sum(T arr[], const int n);
-template<typename T>
-T Sum(T arr[ROWS][COLS], const int ROWS, const int COLS);
-template<typename T>
-double Avg(T arr[], const int n);
-template<typename T>
-double Avg(T arr[ROWS][COLS], const int ROWS, const int COLS);
-
-template<typename T>
-T MinValueIn(T arr[], const int n);
-template<typename T>
-T MinValueIn(T arr[ROWS][COLS], const int ROWS, const int COLS);
-
-template<typename T>
-T MaxValueIn(T arr[], const int n);
-template<typename T>
-T MaxValueIn(T arr[ROWS][COLS], const int ROWS, const int COLS);
-
-void ShiftLeft(int arr[], const int n, const int shifts);
-void ShiftLeft(double arr[], const int n, const int shifts);
-
-void ShiftRight(int arr[], const int n, const int shifts);
-void ShiftRight(double arr[], const int n, const int shifts);
-
-void ShiftLeft(int arr[ROWS][COLS], const int ROWS, const int COLS, int shifts);
+void ShiftLeft(int a[], const int n, int s);
+void ShiftLeft(float a[], const int n, int s);
+void ShiftLeft(double a[], const int n, int s);
+void ShiftLeft(char a[], const int n, int s);
 
 void main()
 {
 	setlocale(LC_ALL, "");
 	const int n = 10;
-	int arr[n] = { 0,1,2,3,4,5,6,7,8,9 };
+	int arr[n];
+	float arr_f[n];
+	double arr_d[n];
+	char arr_ch[n];
+	int num;
 
-	//FillRand(arr, n);	//Заполнение массива случайными числами:
-	Print(arr, n);		//Вывод исходного массива на экран:
-	Sort(arr, n);		//Сортировка массива:
-	Print(arr, n);		//Вывод отсортированного массива на экран:
-	cout << "Сумма элементов массива: " << Sum(arr, n) << endl;
-	cout << "Среднее-арифметическое элементов массива: " << Avg(arr, n) << endl;
+	RandomArr(arr, n);
+	ShowArr(arr, n);
+	cout << "Сумма всех членов массива равна: " << Sum(arr, n) << endl;
+	cout << "Среднее арифметическое массива равно: " << Avg(arr, n) << endl;
 	cout << "Минимальное значение в массиве: " << MinValueIn(arr, n) << endl;
 	cout << "Максимальное значение в массиве: " << MaxValueIn(arr, n) << endl;
+	cout << "Введите количество смещений в право: "; cin >> num;
+	ShiftRight(arr, n, num);
+	ShowArr(arr, n);
+	cout << "Введите количество смещений в лево: "; cin >> num;
+	ShiftLeft(arr, n, num);
+	ShowArr(arr, n);
+	cout << endl << endl;
 
-	const int SIZE = 8;
-	int brr[SIZE];
-	FillRand(brr, SIZE);
-	Print(brr, SIZE);
-	Sort(brr, SIZE);
-	Print(brr, SIZE);
-	cout << "Сумма элементов массива: " << Sum(brr, SIZE) << endl;
-	cout << "Среднее-арифметическое элементов массива: " << Avg(brr, SIZE) << endl;
-	cout << "Минимальное значение в массиве: " << MinValueIn(brr, SIZE) << endl;
-	cout << "Максимальное значение в массиве: " << MaxValueIn(brr, SIZE) << endl;
+	RandomArr(arr_f, n);
+	ShowArr(arr_f, n);
+	cout << "Сумма всех членов массива равна: " << Sum(arr_f, n) << endl;
+	cout << "Среднее арифметическое массива равно: " << Avg(arr_f, n) << endl;
+	cout << "Минимальное значение в массиве: " << MinValueIn(arr_f, n) << endl;
+	cout << "Максимальное значение в массиве: " << MaxValueIn(arr_f, n) << endl;
+	cout << "Введите количество смещений в право: "; cin >> num;
+	ShiftRight(arr_f, n, num);
+	ShowArr(arr_f, n);
+	cout << "Введите количество смещений в лево: "; cin >> num;
+	ShiftLeft(arr_f, n, num);
+	ShowArr(arr_f, n);
+	cout << endl << endl;
 
-	Print(arr, n);
-	/*int shifts;
-	cout << "Введите количество сдвигов: "; cin >> shifts;
-	ShiftLeft(arr, n, shifts);
-	Print(arr, n);
-	cout << "Введите количество сдвигов: "; cin >> shifts;
-	ShiftRight(arr, n, shifts);
-	Print(arr, n);*/
-	cout << delimiter << endl;
+	RandomArr(arr_d, n);
+	ShowArr(arr_d, n);
+	cout << "Сумма всех членов массива равна: " << Sum(arr_d, n) << endl;
+	cout << "Среднее арифметическое массива равно: " << Avg(arr_d, n) << endl;
+	cout << "Минимальное значение в массиве: " << MinValueIn(arr_d, n) << endl;
+	cout << "Максимальное значение в массиве: " << MaxValueIn(arr_d, n) << endl;
+	cout << "Введите количество смещений в право: "; cin >> num;
+	ShiftRight(arr_d, n, num);
+	ShowArr(arr_d, n);
+	cout << "Введите количество смещений в лево: "; cin >> num;
+	ShiftLeft(arr_d, n, num);
+	ShowArr(arr_d, n);
+	cout << endl << endl;
 
-	//		Объявление двумерного массива:
-
-	int i_arr_2[ROWS][COLS] =
-	{
-		{ 3,5,8 },
-	{ 13,21,34 },
-	{ 55,89,144 },
-	};
-
-	FillRand(i_arr_2, ROWS, COLS);
-	Print(i_arr_2, ROWS, COLS);
-	cout << "Сумма элементов массива: " << Sum(i_arr_2, ROWS, COLS) << endl;
-	cout << "Среднее арифметическое:  " << Avg(i_arr_2, ROWS, COLS) << endl;
-	cout << "Минимальное значение:  " << MinValueIn(i_arr_2, ROWS, COLS) << endl;
-	cout << "Максимальное значение:  " << MaxValueIn(i_arr_2, ROWS, COLS) << endl;
-	Sort(i_arr_2, ROWS, COLS);
-	Print(i_arr_2, ROWS, COLS);
-
-	int shifts;
-	cout << "Введите количество сдвигов: "; cin >> shifts;
-	ShiftLeft(i_arr_2, ROWS, COLS, shifts);
-	Print(i_arr_2, ROWS, COLS);
+	RandomArr(arr_ch, n);
+	ShowArr(arr_ch, n);
+	cout << "Введите количество смещений в право: "; cin >> num;
+	ShiftRight(arr_ch, n, num);
+	ShowArr(arr_ch, n);
+	cout << "Введите количество смещений в лево: "; cin >> num;
+	ShiftLeft(arr_ch, n, num);
+	ShowArr(arr_ch, n);
+	cout << endl << endl;
 }
 
-void FillRand(int arr[], const int n)
+void RandomArr(int a[], const int n)
 {
 	for (int i = 0; i < n; i++)
 	{
-		arr[i] = rand() % 100; //функция возвращает псевдослучайное число в диапозоне от 0 до 32676
+		a[i] = rand() % (100 - 0);
 	}
 }
-void FillRand(double arr[], const int n)
+void RandomArr(float a[], const int n)
+{
+	int min_r = 0;
+	int max_r = 100;
+	min_r *= 100;
+	max_r *= 100;
+
+	for (int i = 0; i < n; i++)
+	{
+		a[i] = rand() % (max_r - min_r);
+		a[i] /= 100;
+	}
+}
+void RandomArr(double a[], const int n)
+{
+	int min_r = 0;
+	int max_r = 100;
+	min_r *= 100;
+	max_r *= 100;
+
+	for (int i = 0; i < n; i++)
+	{
+		a[i] = rand() % (max_r - min_r);
+		a[i] /= 100;
+	}
+}
+void RandomArr(char a[], const int n)
 {
 	for (int i = 0; i < n; i++)
 	{
-		arr[i] = rand() % 10000; //функция возвращает псевдослучайное число в диапозоне от 0 до 32676
-		arr[i] /= 100;
+		int x = rand() % (96 - 66);
+		a[i] = (char)x;
 	}
 }
-void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS, int minRand, int maxRand)
-{
-	for (int i = 0; i < ROWS; i++)
-	{
-		for (int j = 0; j < COLS; j++)
-		{
-			arr[i][j] = rand() % (maxRand - minRand) + minRand;
-		}
-	}
-}
-template<typename T>
-void Print(T arr[], const int n)
+
+void ShowArr(int a[], const int n)
 {
 	for (int i = 0; i < n; i++)
 	{
-		cout << arr[i] << "\t";
+		cout << a[i] << "\t";
 	}
-	cout << endl;
+	cout << endl << endl;
 }
-template<typename T>
-void Print(T arr[ROWS][COLS], const int ROWS, const int COLS)
-{
-	for (int i = 0; i < ROWS; i++)
-	{
-		for (int j = 0; j < COLS; j++)
-		{
-			cout << arr[i][j] << "\t";
-		}
-		cout << endl;
-	}
-	cout << endl;
-}
-
-template<typename T>
-void Sort(T arr[], const int n)
+void ShowArr(float a[], const int n)
 {
 	for (int i = 0; i < n; i++)
 	{
-		for (int j = i + 1; j < n; j++)
-		{
-			if (arr[j] < arr[i])
-			{
-				T buffer = arr[i];
-				arr[i] = arr[j];
-				arr[j] = buffer;
-			}
-		}
+		cout << a[i] << "\t";
 	}
+	cout << endl << endl;
 }
-
-template<typename T>
-void Sort(T arr[ROWS][COLS], const int ROWS, const int COLS)
+void ShowArr(double a[], const int n)
 {
-	int iterations = 0;
-	int exchanges = 0;
-	for (int i = 0; i < ROWS; i++)
-	{
-		for (int j = 0; j < COLS; j++)
-		{
-			for (int k = i; k < ROWS; k++)
-			{
-				for (int l = k > i ? 0 : j + 1; l < COLS; l++)
-				{
-					iterations++;
-					//Если перебираемый элемент меньше чем выбранный, меняем их местами:
-					if (arr[k][l] < arr[i][j])
-					{
-						T buffer = arr[i][j];
-						arr[i][j] = arr[k][l];
-						arr[k][l] = buffer;
-						exchanges++;
-					}
-				}
-			}
-		}
-	}
-	cout << "Количество итераций: " << iterations << endl;
-	cout << "Количество обменов: " << exchanges << endl;
-}
-
-template<typename T>
-T Sum(T arr[], const int n)
-{
-	T sum = 0;
 	for (int i = 0; i < n; i++)
 	{
-		sum += arr[i];
+		cout << a[i] << "\t";
 	}
-	return sum;
+	cout << endl << endl;
 }
-template<typename T>
-T Sum(T arr[ROWS][COLS], const int ROWS, const int COLS)
+void ShowArr(char a[], const int n)
 {
-	T sum = 0;
-	for (int i = 0; i < ROWS; i++)
+	for (int i = 0; i < n; i++)
 	{
-		for (int j = 0; j < COLS; j++)
-		{
-			sum += arr[i][j];
-		}
+		cout << a[i] << "\t";
 	}
-	return sum;
+	cout << endl << endl;
 }
 
-template<typename T>
-double Avg(T arr[], const int n)
+int Sum(int a[], const int n)
 {
-	return (double)Sum(arr, n) / n;
+	int sum = 0;
+	for (int i = 0; i < n; i++)
+	{
+		sum += a[i];
+	}
+	return(sum);
 }
-template<typename T>
-double Avg(T arr[ROWS][COLS], const int ROWS, const int COLS)
+int Sum(float a[], const int n)
 {
-	return (double)Sum(arr, ROWS, COLS) / ROWS / COLS;
+	float sum = 0.0;
+	for (int i = 0; i < n; i++)
+	{
+		sum += a[i];
+	}
+	return(sum);
+}
+int Sum(double a[], const int n)
+{
+	double sum = 0.0;
+	for (int i = 0; i < n; i++)
+	{
+		sum += a[i];
+	}
+	return(sum);
 }
 
-template<typename T>
-T MinValueIn(T arr[], const int n)
+double Avg(int a[], const int n)
 {
-	T min = arr[0];
+	double avg = (double)Sum(a, n) / n;
+	return(avg);
+}
+float Avg(float a[], const int n)
+{
+	float avg = (float)Sum(a, n) / n;
+	return(avg);
+}
+double Avg(double a[], const int n)
+{
+	double avg = (double)Sum(a, n) / n;
+	return(avg);
+}
+
+int MinValueIn(int a[], const int n)
+{
+	int min = a[0];
 	for (int i = 1; i < n; i++)
 	{
-		if (arr[i] < min)min = arr[i];
+		if (a[i] < min) min = a[i];
 	}
 	return min;
 }
-template<typename T>
-T MinValueIn(T arr[ROWS][COLS], const int ROWS, const int COLS)
+float MinValueIn(float a[], const int n)
 {
-	T min = arr[0][0];
-	for (int i = 0; i < ROWS; i++)
+	float min = a[0];
+	for (int i = 1; i < n; i++)
 	{
-		for (int j = 0; j < COLS; j++)
-		{
-			if (arr[i][j] < min)min = arr[i][j];
-		}
+		if (a[i] < min) min = a[i];
 	}
 	return min;
 }
-template<typename T>
-T MaxValueIn(T arr[], const int n)
+double MinValueIn(double a[], const int n)
 {
-	T max = arr[0];
+	double min = a[0];
 	for (int i = 1; i < n; i++)
 	{
-		if (arr[i] > max)max = arr[i];
+		if (a[i] < min) min = a[i];
+	}
+	return min;
+}
+
+
+int MaxValueIn(int a[], const int n)
+{
+	int max = a[0];
+	for (int i = 1; i < n; i++)
+	{
+		if (a[i] > max) max = a[i];
 	}
 	return max;
 }
-template<typename T>
-T MaxValueIn(T arr[ROWS][COLS], const int ROWS, const int COLS)
+float MaxValueIn(float a[], const int n)
 {
-	T max = arr[0][0];
-	for (int i = 0; i < ROWS; i++)
+	float max = a[0];
+	for (int i = 1; i < n; i++)
 	{
-		for (int j = 0; j < COLS; j++)
-		{
-			if (arr[i][j] > max)max = arr[i][j];
-		}
+		if (a[i] > max) max = a[i];
 	}
 	return max;
 }
-void ShiftLeft(int arr[], const int n, const int shifts)
+double MaxValueIn(double a[], const int n)
 {
-	for (int i = 0; i < shifts; i++)
+	double max = a[0];
+	for (int i = 1; i < n; i++)
 	{
-		int buffer = arr[0];
-		for (int i = 1; i < n; i++)
-		{
-			arr[i - 1] = arr[i];
-		}
-		arr[n - 1] = buffer;
+		if (a[i] > max) max = a[i];
 	}
-}
-void ShiftLeft(double arr[], const int n, const int shifts)
-{
-	for (int i = 0; i < shifts; i++)
-	{
-		double buffer = arr[0];
-		for (int i = 1; i < n; i++)
-		{
-			arr[i - 1] = arr[i];
-		}
-		arr[n - 1] = buffer;
-	}
+	return max;
 }
 
-void ShiftRight(int arr[], const int n, const int shifts)
+
+void ShiftRight(int a[], const int n, int s)
 {
-	ShiftLeft(arr, n, n - shifts);
+	do
+	{
+		int temp = a[n - 1];
+		for (int i = n - 1; i >= 0; i--)
+		{
+			a[i] = a[i - 1];
+		}
+		a[0] = temp;
+		s--;
+	} while (s);
 }
-void ShiftRight(double arr[], const int n, const int shifts)
+void ShiftRight(float a[], const int n, int s)
 {
-	ShiftLeft(arr, n, n - shifts);
+	do
+	{
+		float temp = a[n - 1];
+		for (int i = n - 1; i >= 0; i--)
+		{
+			a[i] = a[i - 1];
+		}
+		a[0] = temp;
+		s--;
+	} while (s);
+}
+void ShiftRight(double a[], const int n, int s)
+{
+	do
+	{
+		double temp = a[n - 1];
+		for (int i = n - 1; i >= 0; i--)
+		{
+			a[i] = a[i - 1];
+		}
+		a[0] = temp;
+		s--;
+	} while (s);
+}
+void ShiftRight(char a[], const int n, int s)
+{
+	do
+	{
+		char temp = a[n - 1];
+		for (int i = n - 1; i >= 0; i--)
+		{
+			a[i] = a[i - 1];
+		}
+		a[0] = temp;
+		s--;
+	} while (s);
 }
 
-void ShiftLeft(int arr[ROWS][COLS], const int ROWS, const int COLS, int shifts)
+void ShiftLeft(int a[], const int n, int s)
 {
-	/*for (int i = 0; i < ROWS; i++)
-	{
-	ShiftLeft(arr[i], COLS, shifts);
-	}*/
-	ShiftLeft(arr[0], ROWS*COLS, shifts);
+	ShiftRight(a, n, n - s);
+}
+void ShiftLeft(float a[], const int n, int s)
+{
+	ShiftRight(a, n, n - s);
+}
+void ShiftLeft(double a[], const int n, int s)
+{
+	ShiftRight(a, n, n - s);
+}
+void ShiftLeft(char a[], const int n, int s)
+{
+	ShiftRight(a, n, n - s);
 }
