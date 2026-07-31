@@ -93,6 +93,9 @@ void main()
 	FillRand(arr_2d, ROWS, COLS);
 	Show(arr_2d, ROWS, COLS);
 	cout << endl;
+	Sort(arr_2d, ROWS, COLS);
+	Show(arr_2d, ROWS, COLS);
+	cout << endl;
 	cout << "Сумма всех элементов массива равна: " << Sum(arr_2d, ROWS, COLS) << endl;
 	cout << "Среднее арифметическое элементов массива: " << Avg(arr_2d, ROWS, COLS) << endl;
 	cout << "Минимальный элемент массива: " << MinNum(arr_2d, ROWS, COLS) << endl;
@@ -328,7 +331,7 @@ template<typename T> void ShiftLeft(T arr[ROWS][COLS], const int ROWS, const int
 		T temp = arr[0][0];
 		for (int j = 0; j <= ROWS - 1; j++)
 		{
-			for (int k = 0; k < COLS - 1; k++)
+			for (int k = 0; k <= COLS - 1; k++)
 			{
 				if (k == COLS - 1)	arr[j][k] = arr[j + 1][0];
 				else arr[j][k] = arr[j][k + 1];
