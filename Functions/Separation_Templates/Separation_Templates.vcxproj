@@ -123,13 +123,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Avg.cpp" />
     <ClCompile Include="FillRand.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Show.cpp" />
+    <ClCompile Include="Sort.cpp" />
+    <ClCompile Include="Sum.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Avg.h" />
     <ClInclude Include="Constants.h" />
     <ClInclude Include="FillRand.h" />
     <ClInclude Include="Header.h" />
+    <ClInclude Include="Show.h" />
+    <ClInclude Include="Sort.h" />
+    <ClInclude Include="Sum.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

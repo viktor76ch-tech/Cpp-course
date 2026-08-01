@@ -2,20 +2,17 @@
 #include"Constants.h"
 #include"FillRand.h"
 #include"FillRand.cpp"
-using namespace std;
+#include"Show.h"
+#include"Show.cpp"
+#include"Sort.h"
+#include"Sort.cpp"
+#include"Sum.h"
+#include"Sum.cpp"
+#include"Avg.h"
+#include"Avg.cpp"
 
 
 
-
-
-template<typename T> void Show(T arr[], const int n);
-template<typename T> void Show(T arr[ROWS][COLS], const int ROWS, const int COLS);
-template<typename T> void Sort(T arr[], const int n);
-template<typename T> void Sort(T arr[ROWS][COLS], const int ROWS, const int COLS);
-template<typename T> T Sum(T arr[], const int n);
-template<typename T> T Sum(T arr[ROWS][COLS], const int ROWS, const int COLS);
-template<typename T> double Avg(T arr[], const int n);
-template<typename T> double Avg(T arr[ROWS][COLS], const int ROWS, const int COLS);
 template<typename T> T MinNum(T arr[], const int n);
 template<typename T> T MinNum(T arr[ROWS][COLS], const int ROWS, const int COLS);
 template<typename T> T MaxNum(T arr[], const int n);
@@ -110,97 +107,6 @@ void main()
 }
 
 
-template<typename T> void Show(T arr[], const int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		cout << arr[i] << "   ";
-	}
-	cout << endl;
-}
-template<typename T> void Show(T arr[ROWS][COLS], const int ROWS, const int COLS)
-{
-	for (int i = 0; i < ROWS; i++)
-	{
-		for (int j = 0; j < COLS; j++)
-		{
-			cout << arr[i][j] << "\t";
-		}
-		cout << endl;
-	}
-}
-template<typename T> void Sort(T arr[], const int n)
-{
-	T boofer;
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = i + 1; j < n; j++)
-		{
-			if (arr[i] > arr[j])
-			{
-				boofer = arr[i];
-				arr[i] = arr[j];
-				arr[j] = boofer;
-			}
-		}
-	}
-}
-template<typename T> void Sort(T arr[ROWS][COLS], const int ROWS, const int COLS)
-{
-	T boofer;
-	for (int k = 0; k < ROWS; k++)
-	{
-		for (int m = 0; m < COLS; m++)
-		{
-			for (int i = k; i < ROWS; i++)
-			{
-				for (int j = i == k ? m + 1 : 0; j < COLS; j++)
-				{
-					if (arr[k][m] > arr[i][j])
-					{
-						boofer = arr[k][m];
-						arr[k][m] = arr[i][j];
-						arr[i][j] = boofer;
-					}
-				}
-			}
-		}
-	}
-}
-template<typename T> T Sum(T arr[], const int n)
-{
-	T s = 0;
-	for (int i = 0; i < n; i++)
-	{
-		s += arr[i];
-	}
-	return s;
-}
-template<typename T> T Sum(T arr[ROWS][COLS], const int ROWS, const int COLS)
-{
-	T s = 0;
-	for (int i = 0; i < ROWS; i++)
-	{
-		for (int j = 0; j < COLS; j++)
-		{
-			s += arr[i][j];
-		}
-	}
-	return s;
-}
-template<typename T> double Avg(T arr[], const int n)
-{
-	double avg;
-	avg = Sum(arr, n) / n;
-	return avg;
-}
-template<typename T> double Avg(T arr[ROWS][COLS], const int ROWS, const int COLS)
-{
-	double avg;
-	int n = ROWS * COLS;
-	avg = Sum(arr, ROWS, COLS) / n;
-	return avg;
-}
 template<typename T> T MinNum(T arr[], const int n)
 {
 	T min = arr[0];

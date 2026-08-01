@@ -1,5 +1,4 @@
-#include"Header.h"
-#include"Constants.h"
+#include"FillRand.h"
 
 
 template<typename T> void FillRand(T arr[], const int n)

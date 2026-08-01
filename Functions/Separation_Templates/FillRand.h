@@ -1,4 +1,5 @@
 #pragma once
+#include"Header.h"
 #include"Constants.h"
 
 template<typename T> void FillRand(T arr[], const int n);
