@@ -126,6 +126,9 @@
     <ClCompile Include="Avg.cpp" />
     <ClCompile Include="FillRand.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MaxNum.cpp" />
+    <ClCompile Include="MinNum.cpp" />
+    <ClCompile Include="Shift.cpp" />
     <ClCompile Include="Show.cpp" />
     <ClCompile Include="Sort.cpp" />
     <ClCompile Include="Sum.cpp" />
@@ -135,6 +138,9 @@
     <ClInclude Include="Constants.h" />
     <ClInclude Include="FillRand.h" />
     <ClInclude Include="Header.h" />
+    <ClInclude Include="MaxNum.h" />
+    <ClInclude Include="MinNum.h" />
+    <ClInclude Include="Shift.h" />
     <ClInclude Include="Show.h" />
     <ClInclude Include="Sort.h" />
     <ClInclude Include="Sum.h" />
